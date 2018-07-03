@@ -23,13 +23,15 @@
         <p class='p2'></p>
         <div>{{evaluate}}</div>
       </div>
-      <div class='save'>保存</div>
+      <div class='save' @click='save'>保存</div>
     </div>
+    <mptoast />
   </div>
 </template>
 
 <script>
 import card from '@/components/card'
+import mptoast from 'mptoast'
 
 export default {
   data () {
@@ -46,7 +48,8 @@ export default {
   },
 
   components: {
-    card
+    card,
+    mptoast
   },
 
   methods: {
@@ -68,6 +71,10 @@ export default {
     },
     clickHandle (msg, ev) {
       console.log('clickHandle:', msg, ev)
+    },
+    save () {
+      console.log(11111)
+      this.$mptoast('hello~~~')
     }
   },
 
